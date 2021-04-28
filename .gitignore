@@ -1,5 +1,5 @@
 node_modules
 dist
-css
+build-css
 build-src
 build
