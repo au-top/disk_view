@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+:root {
+  --blue: #0077ff;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333333;
+  #app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+
+    #chart {
+      position: relative;
+      flex-grow: 4;
+      #diskMapBox{
+        width: 100%;
+        height: 100%;
+      }
+      .d2b-chart-frame {
+        width: auto !important;
+        height: auto !important;
+      }
+      .d2b-breadcrumbs-frame {
+        user-select: none;
+      }
+      .diskConToolBox {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        z-index: 100;
+      }
+      .loadTipsBox {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    #sidebar {
+      background-color: #fff;
+      max-width: 240px;
+      min-width: 180px;
+      flex-grow: 1;
+      border-left: 1px solid #dddddd;
+      padding: 10px 10px 0 15px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      .useDisk {
+        height: 100%;
+        .title {
+          margin-bottom: 1rem;
+        }
+        .diskElem {
+          transition: all 0.3s;
+          user-select: none;
+          border-radius: 3px;
+          padding: 6px 8px;
+          margin-bottom: 8px;
+          cursor: pointer;
+          // box-shadow:  0 2px 2px #00000033;
+          background-color: #cccccc;
+          &:hover {
+            transform: scale(1.1);
+          }
+          &.use {
+          color: #fff;
+            background-color: var(--blue);
+          }
+        }
+      }
+    }
+  }
+
+  .loadTips {
+    $boxSize: 75px;
+    $margin: 12;
+    $aMove: 140px;
+    width: $boxSize;
+    height: $boxSize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loadTipsElem {
+      border: 3px solid;
+      position: absolute;
+      border-radius:4px;
+      animation: ani ease infinite 2s;
+    }
+
+    .loadTipsElem:nth-child(1) {
+      animation-delay: 0ms;
+      width: $boxSize;
+      height: $boxSize;
+      border-color: hsl(0, 66%, 75%);
+      transform: translate(
+          random() * $aMove - $aMove / 2,
+          random() * $aMove - $aMove / 2
+        )
+        rotate(10deg);
+    }
+
+    .loadTipsElem:nth-child(2) {
+      animation-delay: 50ms;
+      width: $boxSize - $margin * 1px;
+      height: $boxSize - $margin * 1px;
+      border-color: hsl(60, 80%, 60%);
+      transform: translate(
+          random() * $aMove - $aMove / 2,
+          random() * $aMove - $aMove / 2
+        )
+        rotate(random() * 180deg);
+    }
+
+    .loadTipsElem:nth-child(3) {
+      animation-delay: 100ms;
+
+      width: $boxSize - $margin * 2px;
+      height: $boxSize - $margin * 2px;
+      border-color: hsl(120, 80%, 60%);
+      transform: translate(
+          random() * $aMove - $aMove / 2,
+          random() * $aMove - $aMove / 2
+        )
+        rotate(random() * 180deg);
+    }
+
+    .loadTipsElem:nth-child(4) {
+      animation-delay: 150ms;
+
+      width: $boxSize - $margin * 3px;
+      height: $boxSize - $margin * 3px;
+      border-color: hsl(180, 80%, 60%);
+      transform: translate(
+          random() * $aMove - $aMove / 2,
+          random() * $aMove - $aMove / 2
+        )
+        rotate(random() * 180deg);
+    }
+
+    .loadTipsElem:nth-child(5) {
+      animation-delay: 200ms;
+      width: $boxSize - $margin * 4px;
+      height: $boxSize - $margin * 4px;
+      border-color: hsl(240, 80%, 60%);
+      transform: translate(
+          random() * $aMove - $aMove / 2,
+          random() * $aMove - $aMove / 2
+        )
+        rotate(random() * 180deg);
+    }
+    .loadTipsElem:nth-child(6) {
+      animation-delay: 250ms;
+      width: $boxSize - $margin * 5px;
+      height: $boxSize - $margin * 5px;
+      border-color: hsl(49, 80%, 60%);
+      transform: translate(
+          random() * $aMove - $aMove / 2,
+          random() * $aMove - $aMove / 2
+        )
+        rotate(random() * 180deg);
+    }
+
+    @keyframes ani {
+      0% {
+        opacity: 0;
+      }
+      80% {
+        opacity: 1;
+        transform: rotate(360deg);
+      }
+      100% {
+        opacity: 0;
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  button {
+    background: #fff;
+    border: .5px solid #aaaaaa;
+    padding: 4px 6px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:active {
+      transform: scale(0.9);
+    }
+    &.function{
+      background-color: var(--blue);
+      border:  var(--blue);
+      color: #fff;
+    }
+  }
+
+  .flexBox {
+    display: flex;
+  }
+  .flexFill {
+    flex-grow: 1;
+  }
+}

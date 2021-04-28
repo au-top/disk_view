@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>DiskLookGod</title>
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="script-src 'self' 'unsafe-inline';"
+        />
+        <link rel="stylesheet" href="./css/index.css" />
+        <link
+            href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div id="app">
+            <div id="chart">
+                <div id="diskMapBox"></div>
+            </div>
+            <div id="sidebar">
+                <div class="useDisk">
+                    <div class="title flexBox">
+                        可用磁盘
+                        <div class="flexFill"></div>
+                        <button class="reDiskListButton function">
+                            刷新硬盘列表
+                        </button>
+                    </div>
+                    <div class="useDiskList"></div>
+                </div>
+            </div>
+        </div>
+        <script src="./build-src/index.js"></script>
+    </body>
+</html>
